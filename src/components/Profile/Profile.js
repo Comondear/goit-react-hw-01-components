@@ -3,7 +3,7 @@ import { FcLinux } from "react-icons/fc";
 import { ImLocation } from "react-icons/im";
 import css from './Profile.module.css';
 
-export const Profile = ({ user: { username, tag, location, avatar = FcLinux, stats} }) => {
+export const Profile = ({ username, tag, location, avatar = FcLinux, stats}) => {
   return (
   <div className={css.container}>
   <div className={css.profile}>
