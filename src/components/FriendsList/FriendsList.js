@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Friends.module.css';
 import { FriendItem } from 'components/FriendsList/FriendsItem';
 
@@ -15,3 +16,8 @@ export const FriendsList = ({ title, friends }) => {
       </div>
   )
 };
+
+FriendsList.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number
+}

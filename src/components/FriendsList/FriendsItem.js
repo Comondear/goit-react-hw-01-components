@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Friends.module.css';
 
 export const FriendItem = ({ friend: { name, avatar, isOnline } }) => {
@@ -13,3 +14,9 @@ export const FriendItem = ({ friend: { name, avatar, isOnline } }) => {
 </div>
   )
 };
+
+FriendItem.propTypes = {
+  name: PropTypes.string,
+  avatar: PropTypes.string,
+  isOnline: PropTypes.bool
+}
