@@ -20,9 +20,27 @@ export const Stats = ({ title, stats }) => {
   )
 };
 
+// const getColor = function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// };
+
+// const getColor = function getRandomHexColor() {
+//   let color = '#'  + (Math.floor(Math.random() * 16777215).toString(16));
+
+//   if(color === '#ffffff') {
+//     return getColor();
+//   }
+
+//   return color;
+// };
+
 const getColor = function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-};
+  let color = "#";
+  for (let i = 0; i < 3; i++)
+    color += ("0" + Math.floor(Math.random() * Math.pow(16, 2) / 2).toString(16)).slice(-2);
+  return color;
+}
+
 
 Stats.propTypes = {
   title: PropTypes.string.isRequired,
