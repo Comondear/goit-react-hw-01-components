@@ -1,23 +1,26 @@
 import PropTypes from 'prop-types';
-import css from './Stats.module.css';
+import scss from './Stats.module.scss';
 
 export const Stats = ({ title, stats }) => {
   return (
-        <div className={css.container}>
-    <section className={css.statistics}>
-  <h2 className={css.title}>{title}</h2>
-      <ul className={css.statList}>
-        {stats.map(item => (
-          <li className={css.item} key={item.id}
-          style={{ backgroundColor: getColor() }}>
-            <span className={css.label}>{item.label}</span>
-            <span className={css.percentage}>{item.percentage + '%'}</span>
-          </li>
-        ))}
-  </ul>
+    <div className={scss.container}>
+      <section className={scss.statistics}>
+        <h2 className={scss.title}>{title}</h2>
+        <ul className={scss.statList}>
+          {stats.map(item => (
+            <li
+              className={scss.item}
+              key={item.id}
+              style={{ backgroundColor: getColor() }}
+            >
+              <span className={scss.label}>{item.label}</span>
+              <span className={scss.percentage}>{item.percentage + '%'}</span>
+            </li>
+          ))}
+        </ul>
       </section>
-      </div>
-  )
+    </div>
+  );
 };
 
 // const getColor = function getRandomHexColor() {
@@ -35,12 +38,13 @@ export const Stats = ({ title, stats }) => {
 // };
 
 const getColor = function getRandomHexColor() {
-  let color = "#";
+  let color = '#';
   for (let i = 0; i < 3; i++)
-    color += ("0" + Math.floor(Math.random() * Math.pow(16, 2) / 2).toString(16)).slice(-2);
+    color += (
+      '0' + Math.floor((Math.random() * Math.pow(16, 2)) / 2).toString(16)
+    ).slice(-2);
   return color;
-}
-
+};
 
 Stats.propTypes = {
   title: PropTypes.string.isRequired,

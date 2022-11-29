@@ -1,40 +1,45 @@
 import PropTypes from 'prop-types';
-import { FcLinux } from "react-icons/fc";
-import { ImLocation } from "react-icons/im";
-import css from './Profile.module.css';
+import { FcLinux } from 'react-icons/fc';
+import { ImLocation } from 'react-icons/im';
+import scss from './Profile.module.scss';
 
-export const Profile = ({ username, tag, location, avatar = FcLinux, stats}) => {
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar = FcLinux,
+  stats,
+}) => {
   return (
-  <div className={css.container}>
-  <div className={css.profile}>
-  <div className={css.description}>
-    <img
-      src={avatar}
-      alt="User avatar"
-      className={css.avatar}
-    />
-    <p className={css.name}>{username}</p>
-    <p className={css.tag}>{'@' + tag}</p>
-    <p className={css.location}><ImLocation/>{location}</p>
-  </div>
+    <div className={scss.container}>
+      <div className={scss.profile}>
+        <div className={scss.description}>
+          <img src={avatar} alt="User avatar" className={scss.avatar} />
+          <p className={scss.name}>{username}</p>
+          <p className={scss.tag}>{'@' + tag}</p>
+          <p className={scss.location}>
+            <ImLocation />
+            {location}
+          </p>
+        </div>
 
-    <ul className={css.stats}>
-    <li>
-      <span className={css.label}>Followers</span>
-      <span className={css.quantity}>{stats.followers}</span>
-    </li>
-    <li>
-      <span className={css.label}>Views</span>
-      <span className={css.quantity}>{stats.views}</span>
-    </li>
-    <li>
-      <span className={css.label}>Likes</span>
-      <span className={css.quantity}>{stats.likes}</span>
-    </li>
-  </ul>
-</div>
-</div>
-  )
+        <ul className={scss.stats}>
+          <li>
+            <span className={scss.label}>Followers</span>
+            <span className={scss.quantity}>{stats.followers}</span>
+          </li>
+          <li>
+            <span className={scss.label}>Views</span>
+            <span className={scss.quantity}>{stats.views}</span>
+          </li>
+          <li>
+            <span className={scss.label}>Likes</span>
+            <span className={scss.quantity}>{stats.likes}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 Profile.propTypes = {

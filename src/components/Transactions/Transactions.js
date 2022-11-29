@@ -1,32 +1,32 @@
 import PropTypes from 'prop-types';
-import css from './Transactions.module.css';
+import scss from './Transactions.module.scss';
 
-export const Transactions = ({ title, items })=> {
+export const Transactions = ({ title, items }) => {
   return (
-    <div className={css.container}>
-      <h2 className={css.title}>{title}</h2>
-    <table className={css.transactionHistory}>
-      <thead>
-        <tr>
-        <th className={css.mainType}>Type</th>
-        <th className={css.mainAmount}>Amount</th>
-        <th className={css.mainCurrency}>Currency</th>
-      </tr>
-      </thead>
-      <tbody>
-        {items.map(item => (
-          <tr key={item.id} className={css.transList}>
-          <td className={css.transItem}>{item.type}</td>
-          <td className={css.transItem}>{item.amount}</td>
-            <td className={css.transItem}>{item.currency}</td>
+    <div className={scss.container}>
+      <h2 className={scss.title}>{title}</h2>
+      <table className={scss.transactionHistory}>
+        <thead>
+          <tr>
+            <th className={scss.mainType}>Type</th>
+            <th className={scss.mainAmount}>Amount</th>
+            <th className={scss.mainCurrency}>Currency</th>
           </tr>
+        </thead>
+        <tbody>
+          {items.map(item => (
+            <tr key={item.id} className={scss.transList}>
+              <td className={scss.transItem}>{item.type}</td>
+              <td className={scss.transItem}>{item.amount}</td>
+              <td className={scss.transItem}>{item.currency}</td>
+            </tr>
           ))}
-      </tbody>
+        </tbody>
       </table>
-      </div>
-  )
+    </div>
+  );
 };
-  
+
 Transactions.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.exact({
