@@ -18,8 +18,8 @@ export const App = () => {
         stats={user.stats}
       />
       <Stats title="Upload stats" stats={data} />
-      <FriendsList title="Friends List" friends={friends} />;
-      <Transactions title="Transactions History" items={transactions} />;
+      <FriendsList title="Friends List" friends={friends} />
+      <Transactions title="Transactions History" items={transactions} />
     </>
   );
 };

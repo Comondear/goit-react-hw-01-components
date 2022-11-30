@@ -23,20 +23,6 @@ export const Stats = ({ title, stats }) => {
   );
 };
 
-// const getColor = function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// };
-
-// const getColor = function getRandomHexColor() {
-//   let color = '#'  + (Math.floor(Math.random() * 16777215).toString(16));
-
-//   if(color === '#ffffff') {
-//     return getColor();
-//   }
-
-//   return color;
-// };
-
 const getColor = function getRandomHexColor() {
   let color = '#';
   for (let i = 0; i < 3; i++)
